@@ -30,7 +30,7 @@ export class PeopleService {
                 const resourceName = userId.startsWith('people/') ? userId : `people/${userId}`;
                 const res = await people.people.get({
                     resourceName,
-                    personFields: 'names,emailAddresses',
+                    personFields: 'names,emailAddresses,relations',
                 });
                 logToFile(`[PeopleService] Finished getUserProfile for user: ${userId}`);
                 return {

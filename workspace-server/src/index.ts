@@ -664,7 +664,7 @@ There are a list of system labels that can be modified on a message:
     server.registerTool(
         "people.getUserProfile",
         {
-            description: 'Gets a user\'s profile information.',
+            description: 'Gets a user\'s profile information, including their relations (e.g. manager).',
             inputSchema: {
                 userId: z.string().optional().describe('The ID of the user to get profile information for.'),
                 email: z.string().optional().describe('The email address of the user to get profile information for.'),

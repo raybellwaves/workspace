@@ -60,6 +60,10 @@ describe('PeopleService', () => {
                     emailAddresses: [{
                         value: 'test@example.com',
                     }],
+                    relations: [{
+                        type: 'manager',
+                        person: 'people/12345'
+                    }]
                 },
             };
             mockPeopleAPI.people.get.mockResolvedValue(mockUser);
@@ -68,7 +72,7 @@ describe('PeopleService', () => {
 
             expect(mockPeopleAPI.people.get).toHaveBeenCalledWith({
                 resourceName: 'people/110001608645105799644',
-                personFields: 'names,emailAddresses',
+                personFields: 'names,emailAddresses,relations',
             });
             expect(JSON.parse(result.content[0].text)).toEqual({ results: [{ person: mockUser.data }] });
         });
