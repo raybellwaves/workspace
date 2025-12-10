@@ -52,6 +52,12 @@ npm run test
 
 This will run tests located in the `workspace-server/src/__tests__` directory. Ensure tests pass before submitting any changes. For a more comprehensive check, it is recommended to run `npm run test && npm run lint`.
 
+To test a single file you can pass the name of the file e.g.:
+
+```bash
+npm run test -- GmailService.test.ts
+```
+
 ### Linting and Style Checks
 
 To ensure code quality and formatting consistency, run the linter and tests:
